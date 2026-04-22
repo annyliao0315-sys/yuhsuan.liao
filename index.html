@@ -52,14 +52,117 @@
     font-size: 15px; font-weight: 400; letter-spacing: 0.02em;
     color: var(--charcoal);
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
-    font-weight: 400;
+  .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
-  .nav-links a:hover { color: var(--charcoal); }
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links li:not(:last-child)::after {
+    content: "|";
+    padding: 0 1.2rem;
+    color: rgba(0, 0, 0, 0.2);
+    font-weight: 300;
+    transform: translateY(-0.5px);
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+  }
+  .nav-links a:hover {
+    color: var(--charcoal);
+    background: rgba(232, 224, 213, 0.5);
+    transform: translateY(1px);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+  }
 
+  /* LANGUAGE SWITCHER */
+  .lang-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid var(--stone);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover {
+    color: var(--charcoal);
+    border-color: var(--charcoal);
+  }
+  .lang-btn svg {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.2s;
+  }
+  .lang-switcher.open .lang-btn svg {
+    transform: rotate(180deg);
+  }
+  .lang-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(250, 248, 245, 0.98);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--stone);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 110px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 200;
+  }
+  .lang-switcher.open .lang-dropdown {
+    display: block;
+  }
+  .lang-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-dropdown a:hover {
+    background: var(--cream);
+    color: var(--charcoal);
+  }
+  .lang-dropdown a.active {
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+  .lang-flag {
+    font-size: 14px;
+  }
+  
   /* HERO */
   #hero {
     min-height: 100vh;
@@ -449,6 +552,21 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
+<!-- Language Switcher -->
+<div class="lang-switcher" id="langSwitcher">
+  <button class="lang-btn" onclick="toggleLang()">
+    🌐 EN
+    <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="lang-dropdown">
+    <a href="index.html" class="active"><span class="lang-flag">🇬🇧</span> EN</a>
+    <a href="index-fr.html"><span class="lang-flag">🇫🇷</span> FR</a>
+    <a href="index-cn.html"><span class="lang-flag">🇹🇼</span> CN</a>
+  </div>
+</div>
 </nav>
 
 <!-- HERO -->
