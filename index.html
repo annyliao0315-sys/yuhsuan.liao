@@ -248,6 +248,32 @@
   .tag-blue { background: var(--blue-light); color: #5a6e80; }
   .tag-stone { background: var(--stone); color: var(--deep); }
 
+  /* EDUCATION */
+  #education { background: var(--warm-white); }
+  .edu-list { margin-top: 3rem; }
+  .edu-item {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--stone);
+    padding: 2rem 2.5rem;
+    gap: 0;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    background: var(--warm-white);
+    transition: background 0.2s;
+  }
+  .edu-item:hover { background: var(--cream); }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-period {
+    font-size: 14px; color: var(--text-muted); margin-bottom: 2px;
+    letter-spacing: 0.02em;
+  }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 4px;
+  }
+  .edu-school { font-size: 14px; color: var(--brown); font-weight: 500; margin-bottom: 4px; }
+  .edu-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  
   /* SKILLS */
   #skills { background: var(--warm-white); }
   .skills-grid {
@@ -306,29 +332,6 @@
   }
   .project-result.up::before { content: '↑'; }
   .project-result.down::before { content: '↓'; }
-
-  /* EDUCATION */
-  #education { background: var(--warm-white); }
-  .edu-list { margin-top: 3rem; }
-  .edu-item {
-    display: flex; flex-direction: column;
-    border: 1px solid var(--stone);
-    padding: 2rem 2.5rem;
-    gap: 0;
-    border-radius: 20px;
-    margin-bottom: 14px;
-    background: var(--warm-white);
-    transition: background 0.2s;
-  }
-  .edu-item:hover { background: var(--cream); }
-  .edu-item:last-child { margin-bottom: 0; }
-  .edu-period { font-size: 13px; color: var(--text-muted); }
-  .edu-degree {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 4px;
-  }
-  .edu-school { font-size: 14px; color: var(--brown); font-weight: 500; margin-bottom: 4px; }
-  .edu-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
 
   /* LANGUAGES */
   .lang-grid {
