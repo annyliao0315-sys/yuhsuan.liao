@@ -384,11 +384,23 @@
   @media (max-width: 768px) {
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
-    #hero { padding: 6rem 1.5rem 4rem; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    #hero { padding: 5rem 1.5rem 3rem; }
+    .hero-inner {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .hero-photo-wrap { width: 140px; height: 140px; }
+    .hero-bio { max-width: 100%; }
+    .hero-links { justify-content: center; }
+    .hero-subtitle::before { display: none; }
+  
     .container { padding: 0 1.5rem; }
-    .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    .skills-grid, .projects-grid, .lang-grid { grid-template-columns: 1fr; }
+    .exp-row-top, .exp-row-sub { flex-direction: column; gap: 2px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill-cell[style*="span 3"] { grid-column: span 1 !important; }
+    .projects-grid { grid-template-columns: 1fr; }
   }
 
   .exp-row-top {
