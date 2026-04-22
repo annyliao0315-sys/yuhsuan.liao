@@ -906,5 +906,19 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 </script>
+
+<script>
+  function toggleLang() {
+    const switcher = document.getElementById('langSwitcher');
+    switcher.classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const switcher = document.getElementById('langSwitcher');
+    if (!switcher.contains(e.target)) {
+      switcher.classList.remove('open');
+    }
+  });
+</script>
+
 </body>
 </html>
